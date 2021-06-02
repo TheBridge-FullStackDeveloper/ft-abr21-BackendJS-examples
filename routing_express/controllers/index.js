@@ -16,7 +16,6 @@ router.get('/location', pages.location)
 //http://localhost:3000/products 
 router.get('/products', pages.products)
 router.post('/products', pages.addProduct)
-
 router.get('*', pages.home) // Ruta por defecto
 
 module.exports = router;

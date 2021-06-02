@@ -1,5 +1,7 @@
 const express = require('express')
 const router = require('./controllers/index')
+const routerApi = require('./controllers/routerApi')
+
 const app = express()
 const port = 3000
 
@@ -26,9 +28,14 @@ function isAdmin(req, res, next) {
 // Descomentar para probar middelware
 //app.use(isAdmin);
 
-// usar el Router
+//API
+//http://localhost:3000/api/products
+//http://localhost:3000/api/products?id=2 
+app.use('/api',routerApi); // rutas para API
+
+// WEB: usar el Router
 app.use('/',router); // rutas para WEB
-//app.use('/api',routerApi); // rutas para API
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
