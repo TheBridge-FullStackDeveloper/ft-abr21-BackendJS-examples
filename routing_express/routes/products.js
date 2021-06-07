@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const products = require('./products');
+const products = require('../controllers/products');
 
 //http://localhost:3000/api/products?id=2  --> product id=2
 router.get('/products', products.getProducts)

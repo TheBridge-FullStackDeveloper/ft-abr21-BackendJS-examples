@@ -1,6 +1,6 @@
 const prod = require('../utils/products')
 
-const routes = {
+const pages = {
     home:(req, res) => {
         //res.send('Es la Home!!')
         let datos = {nombre:"alex"};
@@ -58,4 +58,4 @@ const routes = {
     }
 }
 
-module.exports = routes;
+module.exports = pages;

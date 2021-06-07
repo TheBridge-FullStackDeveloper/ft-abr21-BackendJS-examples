@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const pages = require('./pages');
+const pages = require('../controllers/pages');
 
 // Aquí van las rutas
 // ...

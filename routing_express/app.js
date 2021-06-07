@@ -1,6 +1,6 @@
 const express = require('express')
-const router = require('./controllers/index')
-const routerApi = require('./controllers/routerApi')
+const router = require('./routes/pages')
+const routerApi = require('./routes/products')
 
 const app = express()
 const port = 3000
