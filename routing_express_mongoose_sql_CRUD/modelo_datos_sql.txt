@@ -1,0 +1,89 @@
+1- Definir el modelo de datos:
+
+BLOG:
+- Tabla de entradas del BLOG
+    - ID_entrada INT PK
+    - Título varchar(100)
+    - Contenido varchar(1500)
+    - ID_autor INT FK
+    - Temática varchar(10)
+    - Fecha date
+
+- Tabla de autores de cada entrada
+    - ID_autor INT PK
+    - Nombre varchar(20)
+    - Apellidos varchar(20)
+    - Email varchar(20)
+    - Avatar varchar(100) --> URL de la imagen
+
+2- Probar queries SQL (sobre la BBDD)
+ - Crear tablas
+    - Tabla AUTORES
+    CREATE TABLE Autores (
+        ID_autor int AUTO_INCREMENT PRIMARY KEY,
+        Nombre varchar(20) NOT NULL,
+        Apellido varchar(20) NOT NULL,
+        Email varchar(40) NOT NULL UNIQUE,
+        Avatar varchar(100)
+    );
+
+    INSERT INTO `Autores`(`Nombre`, `Apellido`, `Email`, `Avatar`) VALUES ('Alejandro','Reyes','alejandro@thebdridgeschool.es','https://randomuser.me/api/portraits/thumb/men/75.jpg')
+
+    INSERT INTO `Autores`(`Nombre`, `Apellido`) VALUES ('Pepe','Perez')
+
+    - Tabla ENTRADAS BLOG
+        CREATE TABLE entradas_blog (
+            ID_entrada int AUTO_INCREMENT PRIMARY KEY,
+            Titulo varchar(100) NOT NULL,
+            Contenido varchar(1500) NOT NULL,
+            ID_autor int,
+            Tematica varchar(10) NOT NULL,
+            Fecha timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (ID_autor) REFERENCES Autores(ID_autor)
+    );
+
+    INSERT INTO `entradas_blog`( `Titulo`, `Contenido`, `ID_autor`, `Tematica`) VALUES ('Noticia SOL','Contenido noticia 2','4','Felicidad')
+
+
+
+    SELECT entradas_blog.Titulo, Autores.Email
+    FROM entradas_blog
+    INNER JOIN Autores ON entradas_blog.ID_autor = Autores.ID_autor;
+
+
+Buscar entradas de autor por EMAIL
+
+SELECT entradas_blog.Titulo, Autores.Email FROM entradas_blog INNER JOIN Autores ON entradas_blog.ID_autor = Autores.ID_autor WHERE Autores.Email='sol@thebridgeschool.es'
+
+Lo mismo con alias
+
+SELECT e.Titulo, e.Contenido, e.Tematica, a.Email 
+FROM entradas_blog as e 
+INNER JOIN Autores as a 
+ON e.ID_autor = a.ID_autor 
+WHERE a.Email='sol@thebridgeschool.es'
+
+
+// ID de cierto email
+SELECT `ID_autor` FROM `Autores` WHERE `Email`='sol@thebridgeschool.es'
+
+
+Crear entrada de un autor con cierto EMAIL
+En la tabla Autores está: EMAIL,ID_autor
+
+INSERT INTO `entradas_blog`( `Titulo`, `Contenido`, `ID_autor`, `Tematica`) VALUES ('Nueva noticia de SOL','Contenido noticia de SOL',(SELECT `ID_autor` FROM `Autores` WHERE `Email`='sol@thebridgeschool.es'),'Felicidad')
+
+
+
+INSERT INTO `entradas_blog`( `Titulo`, `Contenido`, `ID_autor`, `Tematica`) VALUES ('Noticia SOL','Contenido noticia 2','4','Felicidad')
+
+
+
+ - Comprobar estructura correcta
+ - Insertar datos 
+ - Ver cómo se relacionan
+
+
+
+
+3- Integrar con las queries practicadas lo anterior a Node

@@ -1,0 +1,25 @@
+{
+  "name": "routing_express",
+  "version": "1.0.0",
+  "description": "Mi primer servidor con express",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app.js"
+  },
+  "author": "Alejandro Reyes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mariadb": "^2.5.3",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.13",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jest": "^27.0.4",
+    "supertest": "^6.1.3"
+  }
+}
