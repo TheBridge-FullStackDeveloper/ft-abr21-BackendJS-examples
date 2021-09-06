@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "author": "Alejandro Reyes",
+  "author": "Silvia Lopez",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
