@@ -86,3 +86,10 @@ INSERT INTO entradas_blog( Titulo, Contenido, ID_autor, Tematica) VALUES ('Notic
 
 
 3- Integrar con las queries practicadas lo anterior a Node
+
+.env
+*USERDB = getit
+HOST = localhost
+DATABASE = demo
+PASSWORD = Ey!12345$
+PORTPG = 5432*
