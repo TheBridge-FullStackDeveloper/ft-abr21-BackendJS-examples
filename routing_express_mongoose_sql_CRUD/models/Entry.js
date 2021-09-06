@@ -45,7 +45,7 @@ const entries = {
     }  finally {
       client.release();
     }
-    return result;
+    return result.rows;
   },
   getEntriesByEmail: async (email) => {
     const client = await pool.connect()
@@ -61,7 +61,7 @@ const entries = {
     finally {
       client.release();
     }
-    return result;
+    return result.rows;
   }
 
 }
