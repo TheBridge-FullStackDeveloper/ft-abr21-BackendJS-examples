@@ -8,14 +8,15 @@ const routes = {
         let email = req.query.email;
         // Llamar al método del modelo
         try {
+          console.log('**EN GET**')
             const data = email? await Entry.getEntriesByEmail(email):await Entry.getAllEntries();
-            res.status(200).json(data);
+            res.status(200).json(data.rows[0]);
         } catch (err) {
         res.status(500).json({ message: err.message });
         }
     },
     addEntry: async (req, res) => {
-        const entry = Object.values(req.body); // entry . Conversión de {} a []
+        const entry = req.body; 
           try {
             const data = await Entry.createEntry(entry);
             res.status(201).json({ data, status:"OK. Todo insertado. Me voy a desayunar" });
@@ -25,13 +26,3 @@ const routes = {
     }
 }
 module.exports = routes;
-
-// Para crear noticia desde REST client
-/*
-    {Titulo:"n1",
-    Contenido:"c1", 
-    Tematica:"t1",
-    email:"pepe@gmail.com"}
-    */
-
-  

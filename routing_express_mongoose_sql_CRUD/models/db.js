@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+/* const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/";
 
 // Conexión
@@ -50,3 +50,4 @@ module.exports = products;
 // Update --> db.collection.updateMany() o updateOne()
 
 // Delete --> db.collection.deleteMany() o deleteOne()
+ */
