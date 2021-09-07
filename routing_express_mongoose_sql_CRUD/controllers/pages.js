@@ -54,6 +54,7 @@ const pages = {
         let data = await prod.createProduct('https://fakestoreapi.com/products',req.body);
         console.log(data);
         res.status(200).send("enviado");
+        
         //res.status(200).render('product',{data});
     }
 }

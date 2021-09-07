@@ -7,7 +7,6 @@ const pool = new Pool({
   host: process.env.HOST,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-  port:process.env.PORTPG,
 })
 
 console.log(process.env.USERITO)
