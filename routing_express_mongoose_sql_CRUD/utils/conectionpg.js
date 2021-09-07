@@ -9,6 +9,8 @@ const pool = new Pool({
   password: process.env.PASSWORD,
 })
 
+//postgres://gkngcqgn:w7DcftkSiVovwpG9nfRYCgOW8hcUguZI@queenie.db.elephantsql.com/gkngcqgn  
+
 console.log(process.env.USERITO)
 
   module.exports = pool

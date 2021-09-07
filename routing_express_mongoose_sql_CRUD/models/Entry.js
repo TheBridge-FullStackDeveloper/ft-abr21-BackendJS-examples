@@ -3,15 +3,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 const pool = require('../utils/conectionpg')
 
-/* const pool = new Pool({
-  user: 'getit',
-  host: 'localhost',
-  database: 'demo',
-  password: 'Ey!12345$',
-  port: 5432,
-})
- */
-
 // CRUD
 const entries = {
   // entry --> ["n1","c1","t1","pepe@gmail.com"]
